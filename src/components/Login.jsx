@@ -37,7 +37,9 @@ const Login = () => {
                   Create an account
                 </NavLink>
               </div>
-              <button className="btn btn-neutral mt-4">Login</button>
+              <button type="submit" className="btn btn-neutral mt-4">
+                Login
+              </button>
             </fieldset>
           </form>
         </div>

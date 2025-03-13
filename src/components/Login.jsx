@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    console.log(email, password);
   };
 
   return (
@@ -11,7 +15,7 @@ const Login = () => {
       <h2 className="text-4xl font-semibold mb-10">Login</h2>
       <div className="card bg-base-100 w-96 shadow-2xl">
         <div className="card-body">
-          <form>
+          <form onSubmit={handleLogin}>
             <fieldset className="fieldset">
               <label className="fieldset-label">Email</label>
               <input

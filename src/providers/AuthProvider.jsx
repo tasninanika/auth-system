@@ -17,9 +17,9 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  onAuthStateChanged((auth, currentUser) => {
+  onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
-      console.log(currentUser);
+      console.log("cuurently logged in user", currentUser);
     } else {
       console.log("no user logged in");
     }

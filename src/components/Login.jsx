@@ -15,6 +15,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        e.target.reset();
       })
       .catch((error) => {
         console.log(error.message);

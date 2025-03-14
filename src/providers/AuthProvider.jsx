@@ -1,5 +1,6 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import React, { createContext } from "react";
@@ -15,6 +16,14 @@ const AuthProvider = ({ children }) => {
   const signInUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  onAuthStateChanged((auth, currentUser) => {
+    if (currentUser) {
+      console.log(currentUser);
+    } else {
+      console.log("no user logged in");
+    }
+  });
 
   const authInfo = {
     createUser,

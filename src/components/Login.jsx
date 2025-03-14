@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
   const { signInUser } = useContext(AuthContext);
 
   const handleLogin = (e) => {

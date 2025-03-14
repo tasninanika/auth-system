@@ -54,6 +54,7 @@ const Login = () => {
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
               </button>
+              <button className="btn">Login with Google</button>
             </fieldset>
           </form>
         </div>

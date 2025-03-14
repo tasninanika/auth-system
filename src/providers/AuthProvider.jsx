@@ -3,7 +3,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.init";
 
 export const AuthContext = createContext(null);
@@ -19,15 +19,12 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser) {
-      console.log("cuurently logged in user", currentUser);
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      console.log("current user", currentUser);
       setUser(currentUser);
-    } else {
-      console.log("no user logged in");
-      setUser(null);
-    }
-  });
+    });
+  }, []);
 
   const authInfo = {
     user,

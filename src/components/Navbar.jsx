@@ -34,6 +34,9 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <NavLink to="profile">Update Profile</NavLink>
+      </li>
     </>
   );
 

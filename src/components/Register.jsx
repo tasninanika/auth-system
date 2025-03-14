@@ -19,7 +19,7 @@ const Register = () => {
         console.log(result.user);
       })
       .catch((error) => {
-        console.log(error.user);
+        console.log(error.message);
       });
   };
 
